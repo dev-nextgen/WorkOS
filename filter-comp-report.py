@@ -16,10 +16,7 @@ from typing import List
 import pandas as pd
 from openpyxl import load_workbook
 
-# ════════════════════════════════════════════════════════════════
-#  SECOPS Components
-# ════════════════════════════════════════════════════════════════
-
+# !~~ SECOPS Components ~~!
 REQUIRED_COLUMNS = [
     "Topic",
     "CVEID",
@@ -31,19 +28,13 @@ REQUIRED_COLUMNS = [
     "Custom field (Requested For)",
 ]
 
-# ════════════════════════════════════════════════════════════════
-#  SECOPS LOGGING | Audit & Monitoring
-# ════════════════════════════════════════════════════════════════
-
+# !~~ SECOPS LOGGING | Audit & Monitoring ~~!
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s"
 )
 
-# ════════════════════════════════════════════════════════════════
-#  SECOPS Excel Loader
-# ════════════════════════════════════════════════════════════════
-
+# !~~ SECOPS Excel Loader ~~!
 def load_excel_openpyxl(file_path: Path) -> pd.DataFrame:
     """
     Load Excel using openpyxl directly
@@ -66,10 +57,7 @@ def load_excel_openpyxl(file_path: Path) -> pd.DataFrame:
 
     return df
 
-# ════════════════════════════════════════════════════════════════
-#  SECOPS Component List Loader
-# ════════════════════════════════════════════════════════════════
-
+# !~~ SECOPS Component List Loader ~~!
 def load_component_list(list_file: Path) -> List[str]:
 
     logging.info(f"Loading component list from: {list_file}")
@@ -86,10 +74,7 @@ def load_component_list(list_file: Path) -> List[str]:
 
     return components
 
-# ════════════════════════════════════════════════════════════════
-#  Column Resolver
-# ════════════════════════════════════════════════════════════════
-
+# !~~ Column Resolver ~~!
 def resolve_columns(df: pd.DataFrame):
 
     column_map = {c.lower(): c for c in df.columns}
@@ -107,9 +92,7 @@ def resolve_columns(df: pd.DataFrame):
 
     return resolved
 
-# ════════════════════════════════════════════════════════════════
-#  Column Filtering
-# ════════════════════════════════════════════════════════════════
+# !~~ Column Filtering ~~!
 def filter_component(df: pd.DataFrame, component: str) -> pd.DataFrame:
 
     component_col = next(c for c in df.columns if c.lower() == "component")
@@ -124,19 +107,14 @@ def filter_component(df: pd.DataFrame, component: str) -> pd.DataFrame:
 
     return filtered
 
-# ════════════════════════════════════════════════════════════════
-#  Report Writer
-# ════════════════════════════════════════════════════════════════
+# !~~ Report Writer ~~!
 def write_report(df: pd.DataFrame, columns: List[str], output_file: Path):
     df = df[columns]
     with pd.ExcelWriter(output_file, engine="openpyxl") as writer:
         df.to_excel(writer, index=False, sheet_name="Filtered_Report")
     logging.info(f"Report generated: {output_file}")
 
-# ════════════════════════════════════════════════════════════════
-#  Main Processing Pipeline
-# ════════════════════════════════════════════════════════════════
-
+# !~~ Main Processing Pipeline ~~!
 def run_pipeline(input_file: Path, component_file: Path, output_dir: Path):
     output_dir.mkdir(parents=True, exist_ok=True)
     df = load_excel_openpyxl(input_file)
@@ -153,9 +131,7 @@ def run_pipeline(input_file: Path, component_file: Path, output_dir: Path):
         write_report(filtered, columns, output_file)
 
 
-# ════════════════════════════════════════════════════════════════
-#  Main
-# ════════════════════════════════════════════════════════════════
+# !~~ Main ~~!
 def main():
     input_data="AIECDATA.xlsx"
     output_file= "output"
