@@ -1,10 +1,23 @@
 import { SbomFlowMatrix } from "./SbomFlowMatrix";
-
 const flow = new SbomFlowMatrix();
 
-function initApp() {
-  flow.init("#graph");
+import { SbomSunburst } from "./SbomSunburst";
+const Sunflow = new SbomSunburst();
 
+import { SbomCirclePacking } from "./SbomCirclePacking";
+const Crlflow = new SbomCirclePacking();
+
+import { SbomIcicle } from "./SbomIcicle";
+const Iclflow = new SbomIcicle();
+
+/*
+import { SbomOrderInsideOut } from "./SbomOrderInsideOut";
+const stkflow = new SbomOrderInsideOut();
+*/
+
+function initApp() {
+  /*1*/
+  flow.init("#graph");
   fetch("./data/normalized.json")
     .then((res) => {
       if (!res.ok) throw new Error("Failed to load JSON");
@@ -17,6 +30,66 @@ function initApp() {
     .catch((err) => {
       console.error("❌ DATA LOAD ERROR:", err);
     });
+
+  /*2
+  stkflow.init("#stkgraph");
+  fetch("./data/normalized.json")
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to load JSON");
+      return res.json();
+    })
+    .then((data) => {
+      console.log("✅ JSON LOADED:", data);
+      stkflow.update(data);
+    })
+    .catch((err) => {
+      console.error("❌ DATA LOAD ERROR:", err);
+    });*/
+
+  /*3*/
+  Crlflow.init("#crlgraph");
+  fetch("./data/normalized.json")
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to load JSON");
+      return res.json();
+    })
+    .then((data) => {
+      console.log("✅ JSON LOADED:", data);
+      Crlflow.update(data);
+    })
+    .catch((err) => {
+      console.error("❌ DATA LOAD ERROR:", err);
+    });
+
+  /*5*/
+  Iclflow.init("#iclgraph");
+  fetch("./data/normalized.json")
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to load JSON");
+      return res.json();
+    })
+    .then((data) => {
+      console.log("✅ JSON LOADED:", data);
+      Iclflow.update(data);
+    })
+    .catch((err) => {
+      console.error("❌ DATA LOAD ERROR:", err);
+    });
+
+  /* 4 */
+  Sunflow.init("#sungraph");
+  fetch("./data/normalized.json")
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to load JSON");
+      return res.json();
+    })
+    .then((data) => {
+      console.log("✅ JSON LOADED:", data);
+      Sunflow.update(data);
+    })
+    .catch((err) => {
+      console.error("❌ DATA LOAD ERROR:", err);
+    });
 }
 
 // Ensure DOM ready
@@ -25,8 +98,39 @@ document.addEventListener("DOMContentLoaded", initApp);
 // Responsive handling
 window.addEventListener("resize", () => {
   flow.init("#graph");
-
   fetch("./data/normalized.json")
     .then((res) => res.json())
     .then((data) => flow.update(data));
 });
+
+// Responsive handling
+window.addEventListener("resize", () => {
+  Sunflow.init("#sungraph");
+  fetch("./data/normalized.json")
+    .then((res) => res.json())
+    .then((data) => Sunflow.update(data));
+});
+
+// Responsive handling
+window.addEventListener("resize", () => {
+  Crlflow.init("#crlgraph");
+  fetch("./data/normalized.json")
+    .then((res) => res.json())
+    .then((data) => Crlflow.update(data));
+});
+
+// Responsive handling
+window.addEventListener("resize", () => {
+  Iclflow.init("#iclgraph");
+  fetch("./data/normalized.json")
+    .then((res) => res.json())
+    .then((data) => Iclflow.update(data));
+});
+/*
+// Responsive handling
+window.addEventListener("resize", () => {
+  stkflow.init("#stkgraph");
+  fetch("./data/normalized.json")
+    .then((res) => res.json())
+    .then((data) => stkflow.update(data));
+    }); */

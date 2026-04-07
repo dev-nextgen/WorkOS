@@ -4,6 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>PCFS LoB's UniSBOM Dashboard</title>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="/Users/aravindg/UNIFIED-SECOPS-HPE/WorkOS/UniSBOMVisualizer/frontend/js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- AdminLTE -->
@@ -65,21 +73,31 @@
                                     <i
                                         class="nav-icon fas fa-project-diagram"
                                     ></i>
-                                    <p>Flow Matrix</p>
+                                    <p> Telemetry </p>
                                 </a>
                             </li>
-
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-chart-pie"></i>
-                                    <p>Sunburst</p>
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p> DataTable</p>
                                 </a>
                             </li>
-
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-cogs"></i>
-                                    <p>Coverage CheckList</p>
+                                    <i class="nav-icon fas fa-list"></i>
+                                    <p> Coverage CheckList </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-clock"></i>
+                                    <p> Scheduler </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://unisbom.hpe-ezsecops.com/" class="nav-link">
+                                    <i class="nav-icon fas fa-external-link"></i>
+                                    <p> NextCloud </p>
                                 </a>
                             </li>
                         </ul>
@@ -94,7 +112,7 @@
                     <div class="container-fluid">
                         <div class="callout callout-danger">
                                       <h5><i class="fas fa-computer"></i> PCFS UniSBOM Operations </h5>
-                                      EzSecOps Team (ezsecops@hpe.com), enhanced for seamless, transparent operations w.r.t PCFS: </br>
+                                      EzSecOps Team (ezsecops@hpe.com), enhanced w.r.t EU CRA for seamless, transparent tarball downloading, operations w.r.t PCFS: </br>
                                           1) Crystal Clear Reporting
                                           2) Effortless SBOM Tarball Downloads
                                           3) Precision Tracking & Insights
@@ -103,160 +121,241 @@
                 </section>
 
                 <section class="content">
-                      <div class="container-fluid">
-                        <!-- =========================================================== -->
-                        <h5 class="mt-4 mb-2">PCFS Involved Line Of Business</h5>
-                        <div class="row">
-                          <div class="col-md-2 col-sm-6 col-12">
-                            <div class="info-box bg-olive">
-                                <span class="info-box-icon">
-                                    <i class="fas fa-code fa-thin"></i>
-                                    </span>
-                              <div class="info-box-content">
-                                <span class="info-box-number">AIE aaS</span>
-                                <span class="info-box-text">Total: 41,410</span>
-                                <div class="progress">
-                                  <div class="progress-bar" style="width: 100%"></div>
-                                </div>
-                                <a href="#" class="small-box-footer progress-description text-navy">
-                                    <i class="fas fa-arrow-circle-right"></i> More info
-                                </a>
-                              </div>
-                              <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                          </div>
-                          <!-- /.col -->
-                          <div class="col-md-2 col-sm-6 col-12">
-                            <div class="info-box bg-navy">
-                                <span class="info-box-icon">
-                                    <i class="fas fa-code fa-thin"></i>
-                                    </span>
-                              <div class="info-box-content">
-                                <span class="info-box-number">GLFS</span>
-                                <span class="info-box-text">Total: 41,410</span>
-                                <div class="progress">
-                                  <div class="progress-bar" style="width: 100%"></div>
-                                </div>
-                                <a href="#" class="small-box-footer progress-description text-light">
-                                    <i class="fas fa-arrow-circle-right"></i> More info
-                                </a>
-                              </div>
-                              <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                          </div>
-                          <!-- /.col -->
-                          <div class="col-md-2 col-sm-6 col-12">
-                            <div class="info-box bg-olive">
-                                <span class="info-box-icon">
-                                    <i class="fas fa-code fa-thin"></i>
-                                    </span>
-                              <div class="info-box-content">
-                                <span class="info-box-text">GLIS</span>
-                                <span class="info-box-number">Total: 41,410</span>
-                                <div class="progress">
-                                  <div class="progress-bar" style="width: 90%"></div>
-                                </div>
-                                <a href="#" class="small-box-footer progress-description text-navy">
-                                    <i class="fas fa-arrow-circle-right"></i> More info
-                                </a>
-                              </div>
-                              <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                          </div>
-                          <!-- /.col -->
-                          <div class="col-md-2 col-sm-6 col-12">
-                            <div class="info-box bg-navy">
-                                <span class="info-box-icon">
-                                    <i class="fas fa-code fa-thin"></i>
-                                    </span>
-                              <div class="info-box-content">
-                                <span class="info-box-number">Morpheous</span>
-                                <span class="info-box-text">Total: 41,410</span>
-                                <div class="progress">
-                                  <div class="progress-bar" style="width: 100%"></div>
-                                </div>
-                                <a href="#" class="small-box-footer progress-description text-light">
-                                  <i class="fas fa-arrow-circle-right"></i> More info
-                                </a>
-                              </div>
-                              <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                          </div>
-                          <!-- /.col -->
-                          <div class="col-md-2 col-sm-6 col-12">
-                            <div class="info-box bg-olive">
-                                <span class="info-box-icon">
-                                    <i class="fas fa-code fa-thin"></i>
-                                    </span>
-                              <div class="info-box-content">
-                                <span class="info-box-number">EDF(DLGH)</span>
-                                <span class="info-box-text">Total: 41,410</span>
-                                <div class="progress">
-                                  <div class="progress-bar" style="width: 100%"></div>
-                                </div>
-                                <a href="#" class="small-box-footer progress-description text-navy">
-                                    <i class="fas fa-arrow-circle-right"></i> More info
-                                </a>
-                              </div>
-                              <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                          </div>
-                          <!-- /.col -->
-                          <div class="col-md-2 col-sm-6 col-12">
-                            <div class="info-box bg-navy">
-                              <span class="info-box-icon">
-                                  <i class="fas fa-code fa-thin"></i>
-                                  </span>
-                              <div class="info-box-content">
-                                <span class="info-box-number">OpsRamp</span>
-                                <span class="info-box-text">Total: 41,410</span>
-                                <div class="progress">
-                                  <div class="progress-bar" style="width: 100%"></div>
-                                </div>
-                                <a href="#" class="small-box-footer progress-description text-light">
-                                    <i class="fas fa-arrow-circle-right"></i> More info
-                                </a>
-                                </div>
-                              <!-- /.info-box-content -->
+                  <div class="container-fluid">
+
+                    <!-- HEADER -->
+                    <h5 class="mt-4 mb-3">PCFS Involved Line Of Business</h5>
+
+                    <!-- INFO BOX ROW -->
+                    <div class="row">
+
+                      <!-- BOX -->
+                      <div class="col-md-2 col-sm-6 col-12">
+                        <div class="info-box bg-olive">
+                          <span class="info-box-icon">
+                            <i class="fas fa-code"></i>
+                          </span>
+                          <div class="info-box-content">
+                            <span class="info-box-text">AIE aaS</span>
+                            <span class="info-box-number">41,410</span>
+
+                            <div class="progress">
+                              <div class="progress-bar bg-light" style="width: 100%"></div>
                             </div>
 
-                            <!-- /.info-box -->
+                            <span class="progress-description">
+                              Total Components
+                            </span>
                           </div>
-                          <!-- /.col -->
-
                         </div>
-                        <!-- /.row -->
-                      </div><!-- /.container-fluid -->
-                    </section>
+                      </div>
 
-                <!-- MAIN CONTENT -->
-                <section class="content">
-                    <div class="container-fluid">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">SBOM Visualization Panel</h3>
+                      <!-- BOX -->
+                      <div class="col-md-2 col-sm-6 col-12">
+                        <div class="info-box bg-navy">
+                          <span class="info-box-icon">
+                            <i class="fas fa-code"></i>
+                          </span>
+                          <div class="info-box-content">
+                            <span class="info-box-text">GLFS</span>
+                            <span class="info-box-number">41,410</span>
+
+                            <div class="progress">
+                              <div class="progress-bar bg-light" style="width: 100%"></div>
                             </div>
-                            <div class="card-body" width="100%" height="100%">
-                                <div id="graph"></div>
-                                <script type="module" src="/main.ts"></script>
-                            </div>
+
+                            <span class="progress-description text-light">
+                              Total Components
+                            </span>
+                          </div>
                         </div>
+                      </div>
+
+                      <!-- BOX -->
+                      <div class="col-md-2 col-sm-6 col-12">
+                        <div class="info-box bg-olive">
+                          <span class="info-box-icon">
+                            <i class="fas fa-code"></i>
+                          </span>
+                          <div class="info-box-content">
+                            <span class="info-box-text">GLIS</span>
+                            <span class="info-box-number">41,410</span>
+
+                            <div class="progress">
+                              <div class="progress-bar bg-light" style="width: 90%"></div>
+                            </div>
+
+                            <span class="progress-description">
+                              Coverage 90%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- BOX -->
+                      <div class="col-md-2 col-sm-6 col-12">
+                        <div class="info-box bg-navy">
+                          <span class="info-box-icon">
+                            <i class="fas fa-code"></i>
+                          </span>
+                          <div class="info-box-content">
+                            <span class="info-box-text">Morpheus</span>
+                            <span class="info-box-number">41,410</span>
+
+                            <div class="progress">
+                              <div class="progress-bar bg-light" style="width: 100%"></div>
+                            </div>
+
+                            <span class="progress-description text-light">
+                              Fully Covered
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- BOX -->
+                      <div class="col-md-2 col-sm-6 col-12">
+                        <div class="info-box bg-olive">
+                          <span class="info-box-icon">
+                            <i class="fas fa-code"></i>
+                          </span>
+                          <div class="info-box-content">
+                            <span class="info-box-text">EDF (DLGH)</span>
+                            <span class="info-box-number">41,410</span>
+
+                            <div class="progress">
+                              <div class="progress-bar bg-light" style="width: 100%"></div>
+                            </div>
+
+                            <span class="progress-description">
+                              Total Components
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- BOX -->
+                      <div class="col-md-2 col-sm-6 col-12">
+                        <div class="info-box bg-navy">
+                          <span class="info-box-icon">
+                            <i class="fas fa-code"></i>
+                          </span>
+                          <div class="info-box-content">
+                            <span class="info-box-text">OpsRamp</span>
+                            <span class="info-box-number">41,410</span>
+
+                            <div class="progress">
+                              <div class="progress-bar bg-light" style="width: 100%"></div>
+                            </div>
+
+                            <span class="progress-description text-light">
+                              Total Components
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
+
+                    <!-- CARD -->
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="card">
+
+                          <div class="card-header">
+                            <h3 class="card-title">SBOM Network Flow Matrix</h3>
+
+                            <!-- Collapse Button -->
+                            <div class="card-tools">
+                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="card-body">
+                            <div id="graph" style="height:500px;"></div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card">
+
+                          <div class="card-header">
+                            <h3 class="card-title">SBOM SunBurst Flow Matrix</h3>
+
+                            <!-- Collapse Button -->
+                            <div class="card-tools">
+                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="card-body">
+                            <div id="sungraph" style="height:500px;"></div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="card">
+
+                            <div class="card-header">
+                              <h3 class="card-title">SBOM Circle Packing Flow Matrix</h3>
+
+                              <!-- Collapse Button -->
+                              <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                  <i class="fas fa-minus"></i>
+                                </button>
+                              </div>
+                            </div>
+
+                            <div class="card-body">
+                              <div id="crlgraph" style="height:500px;"></div>
+                            </div>
+
+                          </div>
+                        </div>
+                      <div class="col-md-6">
+                        <div class="card">
+
+                          <div class="card-header">
+                            <h3 class="card-title">SBOM Hygiene</h3>
+
+                            <!-- Collapse Button -->
+                            <div class="card-tools">
+                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="card-body">
+                            <div id="iclgraph" style="height:500px;"></div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </section>
+
             </div>
+
             <!-- FOOTER -->
             <footer class="main-footer text-center">
                 <strong>© 2026 UniSBOM Platform</strong> | Built by EzSecOps (ezsecops@hpe.com)
             </footer>
+
         <!-- Scripts -->
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+                    <script type="module" src="/main.ts"></script>
+        </body>
     </body>
 </html>
