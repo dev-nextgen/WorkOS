@@ -2,48 +2,261 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>SBOM Flow Matrix</title>
-        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PCFS LoB's UniSBOM Dashboard</title>
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <!-- AdminLTE -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.css"
+        />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.css"
+        />
         <style>
-            body {
-                margin: 0;
-                font-family: Arial, sans-serif;
-                background: #0b0f17;
-                color: #fff;
-            }
-
-            header {
-                padding: 12px 20px;
-                background: #111827;
-                font-size: 18px;
-                font-weight: bold;
-                border-bottom: 1px solid #222;
-            }
-
-            #graph {
-                width: 100%;
-                height: calc(100vh - 50px);
-            }
-
-            @media (max-width: 768px) {
-                header {
-                    font-size: 14px;
-                }
+            #viz-container {
+                height: 500px;
+                background: #1e1e2f;
+                border-radius: 6px;
             }
         </style>
     </head>
-    </head>
 
-    <body>
-        <header>PCFS SBOM Flow Matrix</header>
-        <div id="graph"></div>
-        <script type="module" src="/main.ts"></script>
-        <script>
-            // Responsive resize
-            window.addEventListener("resize", () => {
-                flow.init("#graph");
-                flow.update(flow.data);
-            });
-        </script>
+    <body class="hold-transition sidebar- layout-fixed">
+        <div class="wrapper">
+            <!-- NAVBAR -->
+            <nav
+                class="main-header navbar navbar-expand navbar-white navbar-light"
+            >
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#"
+                            ><i class="fas fa-bars"></i
+                        ></a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- SIDEBAR -->
+            <aside class="main-sidebar sidebar-dark-olive elevation-4">
+                <!-- Brand -->
+                <a href="#" class="brand-link">
+                    <span class="brand-text font-weight-light"
+                        >PCFS UniSBOM Dashboard</span
+                    >
+                </a>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Menu -->
+                    <nav class="mt-2">
+                        <ul
+                            class="nav nav-pills nav-sidebar flex-column"
+                            data-widget="treeview"
+                        >
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active">
+                                    <i
+                                        class="nav-icon fas fa-project-diagram"
+                                    ></i>
+                                    <p>Flow Matrix</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-chart-pie"></i>
+                                    <p>Sunburst</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-cogs"></i>
+                                    <p>Coverage CheckList</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- CONTENT WRAPPER -->
+            <div class="content-wrapper">
+                <!-- HEADER -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="callout callout-danger">
+                                      <h5><i class="fas fa-computer"></i> PCFS UniSBOM Operations </h5>
+                                      EzSecOps Team (ezsecops@hpe.com), enhanced for seamless, transparent operations w.r.t PCFS: </br>
+                                          1) Crystal Clear Reporting
+                                          2) Effortless SBOM Tarball Downloads
+                                          3) Precision Tracking & Insights
+                                    </div>
+                    </div>
+                </section>
+
+                <section class="content">
+                      <div class="container-fluid">
+                        <!-- =========================================================== -->
+                        <h5 class="mt-4 mb-2">PCFS Involved Line Of Business</h5>
+                        <div class="row">
+                          <div class="col-md-2 col-sm-6 col-12">
+                            <div class="info-box bg-olive">
+                                <span class="info-box-icon">
+                                    <i class="fas fa-code fa-thin"></i>
+                                    </span>
+                              <div class="info-box-content">
+                                <span class="info-box-number">AIE aaS</span>
+                                <span class="info-box-text">Total: 41,410</span>
+                                <div class="progress">
+                                  <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <a href="#" class="small-box-footer progress-description text-navy">
+                                    <i class="fas fa-arrow-circle-right"></i> More info
+                                </a>
+                              </div>
+                              <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                          </div>
+                          <!-- /.col -->
+                          <div class="col-md-2 col-sm-6 col-12">
+                            <div class="info-box bg-navy">
+                                <span class="info-box-icon">
+                                    <i class="fas fa-code fa-thin"></i>
+                                    </span>
+                              <div class="info-box-content">
+                                <span class="info-box-number">GLFS</span>
+                                <span class="info-box-text">Total: 41,410</span>
+                                <div class="progress">
+                                  <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <a href="#" class="small-box-footer progress-description text-light">
+                                    <i class="fas fa-arrow-circle-right"></i> More info
+                                </a>
+                              </div>
+                              <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                          </div>
+                          <!-- /.col -->
+                          <div class="col-md-2 col-sm-6 col-12">
+                            <div class="info-box bg-olive">
+                                <span class="info-box-icon">
+                                    <i class="fas fa-code fa-thin"></i>
+                                    </span>
+                              <div class="info-box-content">
+                                <span class="info-box-text">GLIS</span>
+                                <span class="info-box-number">Total: 41,410</span>
+                                <div class="progress">
+                                  <div class="progress-bar" style="width: 90%"></div>
+                                </div>
+                                <a href="#" class="small-box-footer progress-description text-navy">
+                                    <i class="fas fa-arrow-circle-right"></i> More info
+                                </a>
+                              </div>
+                              <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                          </div>
+                          <!-- /.col -->
+                          <div class="col-md-2 col-sm-6 col-12">
+                            <div class="info-box bg-navy">
+                                <span class="info-box-icon">
+                                    <i class="fas fa-code fa-thin"></i>
+                                    </span>
+                              <div class="info-box-content">
+                                <span class="info-box-number">Morpheous</span>
+                                <span class="info-box-text">Total: 41,410</span>
+                                <div class="progress">
+                                  <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <a href="#" class="small-box-footer progress-description text-light">
+                                  <i class="fas fa-arrow-circle-right"></i> More info
+                                </a>
+                              </div>
+                              <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                          </div>
+                          <!-- /.col -->
+                          <div class="col-md-2 col-sm-6 col-12">
+                            <div class="info-box bg-olive">
+                                <span class="info-box-icon">
+                                    <i class="fas fa-code fa-thin"></i>
+                                    </span>
+                              <div class="info-box-content">
+                                <span class="info-box-number">EDF(DLGH)</span>
+                                <span class="info-box-text">Total: 41,410</span>
+                                <div class="progress">
+                                  <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <a href="#" class="small-box-footer progress-description text-navy">
+                                    <i class="fas fa-arrow-circle-right"></i> More info
+                                </a>
+                              </div>
+                              <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                          </div>
+                          <!-- /.col -->
+                          <div class="col-md-2 col-sm-6 col-12">
+                            <div class="info-box bg-navy">
+                              <span class="info-box-icon">
+                                  <i class="fas fa-code fa-thin"></i>
+                                  </span>
+                              <div class="info-box-content">
+                                <span class="info-box-number">OpsRamp</span>
+                                <span class="info-box-text">Total: 41,410</span>
+                                <div class="progress">
+                                  <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <a href="#" class="small-box-footer progress-description text-light">
+                                    <i class="fas fa-arrow-circle-right"></i> More info
+                                </a>
+                                </div>
+                              <!-- /.info-box-content -->
+                            </div>
+
+                            <!-- /.info-box -->
+                          </div>
+                          <!-- /.col -->
+
+                        </div>
+                        <!-- /.row -->
+                      </div><!-- /.container-fluid -->
+                    </section>
+
+                <!-- MAIN CONTENT -->
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">SBOM Visualization Panel</h3>
+                            </div>
+                            <div class="card-body" width="100%" height="100%">
+                                <div id="graph"></div>
+                                <script type="module" src="/main.ts"></script>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- FOOTER -->
+            <footer class="main-footer text-center">
+                <strong>© 2026 UniSBOM Platform</strong> | Built by EzSecOps (ezsecops@hpe.com)
+            </footer>
+        <!-- Scripts -->
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
     </body>
 </html>
