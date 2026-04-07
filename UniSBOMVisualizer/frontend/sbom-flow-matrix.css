@@ -1,0 +1,58 @@
+.node {
+    fill: #69b3a2;
+}
+
+.node.direct {
+    fill: #1f77b4;
+}
+
+.node.transitive {
+    fill: #ff7f0e;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+.label {
+    font-size: 10px;
+    fill: #333;
+}
+
+circle {
+    stroke: #222;
+    stroke-width: 1px;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+.node {
+    stroke: #222;
+    stroke-width: 1px;
+}
+
+.node.direct {
+    fill: #1f77b4;
+}
+
+.node.transitive {
+    fill: #ff7f0e;
+}
+
+.label {
+    font-size: 10px;
+    fill: #333;
+}
+
+/* Organization grouping */
+.org-organization-1 {
+    fill: #1f77b4;
+}
+
+.org-npm {
+    fill: #2ca02c;
+}
