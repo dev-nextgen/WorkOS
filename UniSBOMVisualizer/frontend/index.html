@@ -56,7 +56,9 @@
                 <!-- Brand -->
                 <a href="#" class="brand-link">
                     <span class="brand-text font-weight-light"
-                        >PCFS UniSBOM Dashboard</span
+                        ><i
+                            class="nav-icon fas fa-file-shield"
+                        ></i> WorkOS </span
                     >
                 </a>
 
@@ -95,10 +97,33 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="https://unisbom.hpe-ezsecops.com/" class="nav-link">
+                                <a href="http://unisbom.hpe-ezsecops.com/" class="nav-link">
                                     <i class="nav-icon fas fa-external-link"></i>
                                     <p> NextCloud </p>
                                 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-cogs"></i>
+                                    <p>
+                                        CVE Scans Tools
+                                    <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                    <a href="http://localhost:5173/index.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Wiz (TBD) </p>
+                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://lr1-ez-jenkins.mip.storage.hpecorp.net:8443/view/all/job/xray_scan_images/build?delay=0sec" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>XRAY </p>
+                                    </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </nav>
@@ -263,7 +288,7 @@
                         <div class="card">
 
                           <div class="card-header">
-                            <h3 class="card-title">SBOM Network Flow Matrix</h3>
+                            <h3 class="card-title">SBOM Network Matrix</h3>
 
                             <!-- Collapse Button -->
                             <div class="card-tools">
@@ -283,7 +308,7 @@
                         <div class="card">
 
                           <div class="card-header">
-                            <h3 class="card-title">SBOM SunBurst Flow Matrix</h3>
+                            <h3 class="card-title">SBOM Sunburst Matrix</h3>
 
                             <!-- Collapse Button -->
                             <div class="card-tools">
@@ -307,7 +332,7 @@
                           <div class="card">
 
                             <div class="card-header">
-                              <h3 class="card-title">SBOM Circle Packing Flow Matrix</h3>
+                              <h3 class="card-title">SBOM Circle Packing Matrix</h3>
 
                               <!-- Collapse Button -->
                               <div class="card-tools">
@@ -339,6 +364,49 @@
 
                           <div class="card-body">
                             <div id="iclgraph" style="height:500px;"></div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- CARD -->
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="card">
+
+                            <div class="card-header">
+                              <h3 class="card-title">SBOM HeatMap</h3>
+
+                              <!-- Collapse Button -->
+                              <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                  <i class="fas fa-minus"></i>
+                                </button>
+                              </div>
+                            </div>
+
+                            <div class="card-body">
+                              <div id="heatmapgraph" style="height:500px;"></div>
+                            </div>
+
+                          </div>
+                        </div>
+                      <div class="col-md-6">
+                        <div class="card">
+
+                          <div class="card-header">
+                            <h3 class="card-title">SBOM PieChart </h3>
+
+                            <!-- Collapse Button -->
+                            <div class="card-tools">
+                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="card-body">
+                            <div id="piegraph" style="height:500px;"></div>
                           </div>
 
                         </div>

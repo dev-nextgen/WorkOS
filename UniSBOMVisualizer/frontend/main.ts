@@ -11,6 +11,24 @@ import { SbomIcicle } from "./SbomIcicle";
 const Iclflow = new SbomIcicle();
 
 /*
+import { SbomPieChart } from "./SbomPieChart";
+const Pieflow = new SbomPieChart();
+
+import { SbomHeatMap } from "./SbomHeatMap";
+const HeatMapflow = new SbomHeatMap();
+const heatMapdata = {
+  sbom_data: {
+    AIE: [{}],
+    OpsRamp: [{}],
+    EDF: [{}],
+    GLIS: [{}],
+    GLFS: [{}, {}],
+    HKS: [{}],
+  },
+};
+HeatMapflow.init("#heatmapgraph");
+HeatMapflow.update(heatMapdata);
+
 import { SbomOrderInsideOut } from "./SbomOrderInsideOut";
 const stkflow = new SbomOrderInsideOut();
 */
@@ -30,21 +48,6 @@ function initApp() {
     .catch((err) => {
       console.error("❌ DATA LOAD ERROR:", err);
     });
-
-  /*2
-  stkflow.init("#stkgraph");
-  fetch("./data/normalized.json")
-    .then((res) => {
-      if (!res.ok) throw new Error("Failed to load JSON");
-      return res.json();
-    })
-    .then((data) => {
-      console.log("✅ JSON LOADED:", data);
-      stkflow.update(data);
-    })
-    .catch((err) => {
-      console.error("❌ DATA LOAD ERROR:", err);
-    });*/
 
   /*3*/
   Crlflow.init("#crlgraph");
@@ -92,6 +95,36 @@ function initApp() {
     });
 }
 
+/*1
+Pieflow.init("#piegraph");
+fetch("./data/normalized.json")
+  .then((res) => {
+    if (!res.ok) throw new Error("Failed to load JSON");
+    return res.json();
+  })
+  .then((data) => {
+    console.log("✅ JSON LOADED:", data);
+    Pieflow.update(data);
+  })
+  .catch((err) => {
+    console.error("❌ DATA LOAD ERROR:", err);
+  });
+*/
+/*2
+stkflow.init("#stkgraph");
+fetch("./data/normalized.json")
+  .then((res) => {
+    if (!res.ok) throw new Error("Failed to load JSON");
+    return res.json();
+  })
+  .then((data) => {
+    console.log("✅ JSON LOADED:", data);
+    stkflow.update(data);
+  })
+  .catch((err) => {
+    console.error("❌ DATA LOAD ERROR:", err);
+  });*/
+
 // Ensure DOM ready
 document.addEventListener("DOMContentLoaded", initApp);
 
@@ -129,8 +162,18 @@ window.addEventListener("resize", () => {
 /*
 // Responsive handling
 window.addEventListener("resize", () => {
+  Pieflow.init("#piegraph");
+  fetch("./data/normalized.json")
+    .then((res) => res.json())
+    .then((data) => Pieflow.update(data));
+});
+
+// Responsive handling
+window.addEventListener("resize", () => {
   stkflow.init("#stkgraph");
   fetch("./data/normalized.json")
     .then((res) => res.json())
     .then((data) => stkflow.update(data));
-    }); */
+    });
+*/
+// Responsive handling
