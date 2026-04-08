@@ -187,8 +187,8 @@ export class SbomFlowMatrix {
         return 6;
       })
       .attr("fill", (d: any) => {
-        if (d.id === "PCFS") return "#f43f5e";
-        if (d.id === "V1.9") return "#f59e0b";
+        if (d.id === "PCFS") return "#03330f";
+        if (d.id === "V1.9") return "#ab2051";
         if (!this.hasChildren(d.id) && !this.hasSbomData(d.id))
           return "#6b7280"; // leaf
         if (this.hasSbomData(d.id)) return "#22c55e"; // SBOM entry
