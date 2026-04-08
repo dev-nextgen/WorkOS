@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PCFS LoB's UniSBOM Dashboard</title>
+        <title>EzSecOps-WorkOS</title>
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.js"></script>
@@ -41,12 +41,12 @@
             >
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" data-widget="pushmenu" href="#"
+                        <a class="nav-link" data-widget="pushmenu" href="./index.html"
                             ><i class="fas fa-bars"></i
                         ></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="./index.html" class="nav-link">Home</a>
                     </li>
                 </ul>
             </nav>
@@ -54,9 +54,9 @@
             <!-- SIDEBAR -->
             <aside class="main-sidebar sidebar-dark-olive elevation-4">
                 <!-- Brand -->
-                <a href="#" class="brand-link">
+                <a href="./index.html" class="brand-link">
                     <span class="brand-text font-weight-light"
-                        ><i
+                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
                             class="nav-icon fas fa-file-shield"
                         ></i> WorkOS </span
                     >
@@ -71,27 +71,16 @@
                             data-widget="treeview"
                         >
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
+                                <a href="./index.html" class="nav-link active">
                                     <i
                                         class="nav-icon fas fa-project-diagram"
                                     ></i>
                                     <p> Telemetry </p>
                                 </a>
                             </li>
+
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-table"></i>
-                                    <p> DataTable</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-list"></i>
-                                    <p> Coverage CheckList </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="./index.html" class="nav-link">
                                     <i class="nav-icon fas fa-clock"></i>
                                     <p> Scheduler </p>
                                 </a>
@@ -103,10 +92,10 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="./index.html" class="nav-link">
                                     <i class="nav-icon fas fa-cogs"></i>
                                     <p>
-                                        CVE Scans Tools
+                                        Tools
                                     <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
@@ -114,14 +103,49 @@
                                     <li class="nav-item">
                                     <a href="http://localhost:5173/index.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Wiz (TBD) </p>
+                                        <p>Rapid 7 <code> *TBD</code></p>
+                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a href="http://localhost:5173/index.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Tenable Nessus<code> *TBD</code></p>
                                     </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="https://lr1-ez-jenkins.mip.storage.hpecorp.net:8443/view/all/job/xray_scan_images/build?delay=0sec" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>XRAY </p>
+                                        <p>JFrog Xray</p>
                                     </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link">
+                                    <i class="nav-icon fas fa-print"></i>
+                                    <p>
+                                        Reports / DataTable
+                                    <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                    <a href="http://localhost:5173/datatable.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>SBOM DataTable</p>
+                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a href="http://localhost:5173/datatable.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>CVE DataTable</p>
+                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="http://localhost:5173/datatable.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p> Coverage CheckList </p>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
@@ -151,9 +175,8 @@
                     <!-- HEADER -->
                     <h5 class="mt-4 mb-3">PCFS Involved Line Of Business</h5>
 
-                    <!-- INFO BOX ROW -->
+                    <!-- SBOM Pkgs INFO BOX ROW -->
                     <div class="row">
-
                       <!-- BOX -->
                       <div class="col-md-2 col-sm-6 col-12">
                         <div class="info-box bg-olive">
@@ -162,14 +185,11 @@
                           </span>
                           <div class="info-box-content">
                             <span class="info-box-text">AIE aaS</span>
-                            <span class="info-box-number">41,410</span>
-
                             <div class="progress">
                               <div class="progress-bar bg-light" style="width: 100%"></div>
                             </div>
-
-                            <span class="progress-description">
-                              Total Components
+                            <span class="progress-description text-light">
+                              Total Pkg's: 4,710
                             </span>
                           </div>
                         </div>
@@ -183,14 +203,11 @@
                           </span>
                           <div class="info-box-content">
                             <span class="info-box-text">GLFS</span>
-                            <span class="info-box-number">41,410</span>
-
                             <div class="progress">
                               <div class="progress-bar bg-light" style="width: 100%"></div>
                             </div>
-
                             <span class="progress-description text-light">
-                              Total Components
+                              Total Pkg's: 4,710
                             </span>
                           </div>
                         </div>
@@ -204,14 +221,11 @@
                           </span>
                           <div class="info-box-content">
                             <span class="info-box-text">GLIS</span>
-                            <span class="info-box-number">41,410</span>
-
                             <div class="progress">
-                              <div class="progress-bar bg-light" style="width: 90%"></div>
+                              <div class="progress-bar bg-light" style="width: 100%"></div>
                             </div>
-
-                            <span class="progress-description">
-                              Coverage 90%
+                            <span class="progress-description text-light">
+                              Total Pkg's: 4,710
                             </span>
                           </div>
                         </div>
@@ -225,14 +239,11 @@
                           </span>
                           <div class="info-box-content">
                             <span class="info-box-text">Morpheus</span>
-                            <span class="info-box-number">41,410</span>
-
                             <div class="progress">
                               <div class="progress-bar bg-light" style="width: 100%"></div>
                             </div>
-
                             <span class="progress-description text-light">
-                              Fully Covered
+                              Total Pkg's: 4,710
                             </span>
                           </div>
                         </div>
@@ -246,14 +257,11 @@
                           </span>
                           <div class="info-box-content">
                             <span class="info-box-text">EDF (DLGH)</span>
-                            <span class="info-box-number">41,410</span>
-
                             <div class="progress">
                               <div class="progress-bar bg-light" style="width: 100%"></div>
                             </div>
-
-                            <span class="progress-description">
-                              Total Components
+                            <span class="progress-description text-light">
+                              Total Pkg's: 4,710
                             </span>
                           </div>
                         </div>
@@ -267,24 +275,87 @@
                           </span>
                           <div class="info-box-content">
                             <span class="info-box-text">OpsRamp</span>
-                            <span class="info-box-number">41,410</span>
-
                             <div class="progress">
                               <div class="progress-bar bg-light" style="width: 100%"></div>
                             </div>
-
                             <span class="progress-description text-light">
-                              Total Components
+                              Total Pkg's: 4,710
                             </span>
                           </div>
                         </div>
                       </div>
-
+                    </div>
+                    <!-- CARDs #1 SBOM Telemetry INFO BOX ROW -->
+                    <div class="row">
+                        <div class="col-md-3">
+                          <div class="card">
+                            <div class="card-header">
+                              <h3 class="card-title">SBOM HeatMap</h3>
+                              <!-- Collapse Button -->
+                              <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                  <i class="fas fa-minus"></i>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div id="heatmapgraph" style="height:500px;"></div>
+                            </div>
+                          </div>
+                        </div>
+                      <div class="col-md-3">
+                        <div class="card">
+                          <div class="card-header">
+                            <h3 class="card-title">PCFS Total SBOMs </h3>
+                            <!-- Collapse Button -->
+                            <div class="card-tools">
+                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <div id="piegraph" style="height:500px;"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card">
+                          <div class="card-header">
+                            <h3 class="card-title">SBOM PieChart </h3>
+                            <!-- Collapse Button -->
+                            <div class="card-tools">
+                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <div id="piegraph" style="height:500px;"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card">
+                          <div class="card-header">
+                            <h3 class="card-title">SBOM PieChart </h3>
+                            <!-- Collapse Button -->
+                            <div class="card-tools">
+                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <div id="piegraph" style="height:500px;"></div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    <!-- CARD -->
+                    <!-- CARDs #2 SBOM Telemetry INFO BOX ROW -->
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-8">
                         <div class="card">
 
                           <div class="card-header">
@@ -304,7 +375,7 @@
 
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="card">
 
                           <div class="card-header">
@@ -326,7 +397,7 @@
                       </div>
                     </div>
 
-                    <!-- CARD -->
+                    <!-- CARDs #3 SBOM Telemetry INFO BOX ROW -->
                     <div class="row">
                         <div class="col-md-6">
                           <div class="card">
@@ -369,49 +440,6 @@
                         </div>
                       </div>
                     </div>
-                    <!-- CARD -->
-                    <div class="row">
-                        <div class="col-md-6">
-                          <div class="card">
-
-                            <div class="card-header">
-                              <h3 class="card-title">SBOM HeatMap</h3>
-
-                              <!-- Collapse Button -->
-                              <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                  <i class="fas fa-minus"></i>
-                                </button>
-                              </div>
-                            </div>
-
-                            <div class="card-body">
-                              <div id="heatmapgraph" style="height:500px;"></div>
-                            </div>
-
-                          </div>
-                        </div>
-                      <div class="col-md-6">
-                        <div class="card">
-
-                          <div class="card-header">
-                            <h3 class="card-title">SBOM PieChart </h3>
-
-                            <!-- Collapse Button -->
-                            <div class="card-tools">
-                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                              </button>
-                            </div>
-                          </div>
-
-                          <div class="card-body">
-                            <div id="piegraph" style="height:500px;"></div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </section>
 
@@ -423,7 +451,7 @@
             </footer>
 
         <!-- Scripts -->
-                    <script type="module" src="/main.ts"></script>
+            <script type="module" src="/main.ts"></script>
         </body>
     </body>
 </html>
