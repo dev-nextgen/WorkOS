@@ -124,10 +124,10 @@ export class SbomSunburst {
       .outerRadius((d) => d.y1);
 
     const color = (d: any) => {
-      if (d.data.id === "PCFS") return "#03330f";
-      if (d.depth === 1) return "#1b0d2e";
+      if (d.data.id === "PCFS") return "#00B388";
+      if (d.depth === 1) return "#6b7280";
       if (d.data.isSbom) return "#22c55e";
-      if (!d.children) return "#6b7280";
+      if (!d.children) return "#6b7000";
       return "#38bdf8";
     };
 

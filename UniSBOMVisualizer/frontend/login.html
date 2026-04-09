@@ -43,7 +43,7 @@
             <div class="lockscreen-item">
                 <!-- lockscreen image -->
                 <div class="lockscreen-image">
-                    <img src="./ezsecops-logo.png" alt="User Image" />
+                    <img src="./src/img/ezsecops-logo.png" alt="User Image" />
                 </div>
                 <!-- /.lockscreen-image -->
 
@@ -95,7 +95,7 @@
 
             // Add onclick event listener
             button.onclick = function () {
-                window.location.href = "http://localhost:5173/index.html";
+                window.location.href = "http://localhost:8081/index.html";
             };
 
             input.addEventListener("keypress", function (event) {
@@ -109,7 +109,7 @@
                     if (emailRegex.test(email)) {
                         feedback.textContent = "Valid! Redirecting...";
                         window.location.href =
-                            "http://localhost:5173/index.html";
+                            "http://localhost:8081/index.html";
                     } else {
                         alert("Invalid Email, 'Only @hpe.com allowed'");
                         feedback.textContent = "Invalid email format.";

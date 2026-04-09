@@ -4,8 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>EzSecOps-WorkOS</title>
-
-        </script>
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.js"></script>
@@ -33,12 +31,12 @@
             >
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" data-widget="pushmenu" href="./index.html"
+                        <a class="nav-link" data-widget="pushmenu" href="http://localhost:8081/index.html"
                             ><i class="fas fa-bars"></i
                         ></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="./index.html" class="nav-link">Home</a>
+                        <a href="http://localhost:8081/index.html" class="nav-link">Home</a>
                     </li>
                 </ul>
             </nav>
@@ -46,7 +44,7 @@
             <!-- SIDEBAR -->
             <aside class="main-sidebar sidebar-dark-olive elevation-4">
                 <!-- Brand -->
-                <a href="./index.html" class="brand-link">
+                <a href="http://localhost:8081/index.html" class="brand-link">
                     <span class="brand-text font-weight-light"
                         >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
                             class="nav-icon fas fa-file-shield"
@@ -63,7 +61,7 @@
                             data-widget="treeview"
                         >
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link active">
+                                <a href="http://localhost:8081/index.html" class="nav-link active">
                                     <i
                                         class="nav-icon fas fa-project-diagram"
                                     ></i>
@@ -72,7 +70,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
+                                <a href="http://localhost:8081/index.html" class="nav-link">
                                     <i class="nav-icon fas fa-clock"></i>
                                     <p> Scheduler </p>
                                 </a>
@@ -83,8 +81,9 @@
                                     <p> NextCloud </p>
                                 </a>
                             </li>
+
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
+                                <a href="http://localhost:8081/index.html" class="nav-link">
                                     <i class="nav-icon fas fa-cogs"></i>
                                     <p>
                                         Tools
@@ -93,50 +92,61 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                    <a href="http://localhost:5173/index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Rapid 7 <code> *TBD</code></p>
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                    <a href="http://localhost:5173/index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Tenable Nessus<code> *TBD</code></p>
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a href="https://lr1-ez-jenkins.mip.storage.hpecorp.net:8443/view/all/job/xray_scan_images/build?delay=0sec" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                            <i class="nav-icon fas fa-external-link"></i>
                                         <p>JFrog Xray</p>
                                     </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
-                                    <i class="nav-icon fas fa-print"></i>
+                                <a href="http://localhost:8081/index.html" class="nav-link">
+                                    <i class="nav-icon fas fa-tasks"></i>
                                     <p>
-                                        Reports / DataTable
+                                        CVE Issues Reported
                                     <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                    <a href="http://localhost:5173/datatable.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>SBOM DataTable</p>
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                    <a href="http://localhost:5173/datatable.html" class="nav-link">
+                                    <a href="http://localhost:8081/datatable.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>CVE DataTable</p>
                                     </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="http://localhost:5173/datatable.html" class="nav-link">
+                                        <a href="http://localhost:8081/datatable.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p> Coverage CheckList </p>
+                                            <p>AIE CVE Coverage </p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="http://localhost:8081/datatable.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>EzLegacy CVE Coverage </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="http://localhost:8081/index.html" class="nav-link">
+                                    <i class="nav-icon fas fa-reorder"></i>
+                                    <p>
+                                        SBOM Ops
+                                    <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                    <a href="http://localhost:8081/datatable.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>SBOM DataTable</p>
+                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="http://localhost:8081/datatable.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p> Pkg Coverage CheckList </p>
                                         </a>
                                     </li>
                                 </ul>
@@ -288,12 +298,11 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <div id="graph" style="height:470px; border:1px solid red"></div>
+                                    <div id="graph" style="height:470px; border:2px solid orange"></div>
                                 </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
-
                                 <div class="card card-outline card-navy">
                                 <div class="card-header">
                                     <h3 class="card-title">SBOM Pkg's Sunburst View</h3>
@@ -302,7 +311,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <div id="sungraph" style="height:470px; border:1px solid red"></div>
+                                    <div id="sungraph" style="height:470px; border:2px solid red"></div>
                                 </div>
                                 </div>
                             </div>
@@ -332,11 +341,12 @@
                         </div>
                     </section>
              </div>
-            <!-- FOOTER -->
-            <footer class="main-footer text-center">
-                <strong>© 2026 UniSBOM Platform</strong> | Built by EzSecOps (ezsecops@hpe.com)
-            </footer>
-            <script type="module" src="/main.ts"></script>
+             <!-- FOOTER -->
+             <footer class="main-footer text-center">
+                 <strong>© 2026 WorkOS Platform</strong> | Built by EzSecOps
+                 (ezsecops@hpe.com)
+             </footer>
+            <script type="module" src="./main.ts"></script>
         </body>
     </body>
 </html>
