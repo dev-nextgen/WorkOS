@@ -1,32 +1,37 @@
-# Stage 1: Build TS/Frontend
-FROM node:25.9.0-alpine AS builder
+# -------------------------
+# Stage 1: Build (Vite)
+# -------------------------
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy only dependency files first (better caching)
+# Install dependencies (cache-friendly)
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# Copy only required source files
-COPY login.html ./
-COPY datatable.html ./
-COPY css/ ./css/
-COPY js/ ./js/
-COPY data/ ./data/
-COPY ezsecops-logo.png ./
+# Copy required project files
+COPY index.html ./
 COPY main.ts ./
+COPY vite.config.ts ./
+COPY src/ ./src/
+COPY public/ ./public/
 
-# Build
-COPY . .
+# Build the Vite app
 RUN npm run build
 
-# Stage 2: NGINX
+
+# -------------------------
+# Stage 2: Serve (NGINX)
+# -------------------------
 FROM nginx:stable-alpine
 
+# Remove default config
 RUN rm /etc/nginx/conf.d/default.conf
+
+# Add custom nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy built assets only
+# Copy built frontend
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80

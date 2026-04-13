@@ -35,7 +35,7 @@ export class SbomFlowMatrix {
       .append("svg")
       .attr("width", "100%")
       .attr("height", "100%")
-      .style("background", "#0b0f17");
+      .style("background", "#000000");
   }
 
   // ---------------- UPDATE ----------------
@@ -187,12 +187,12 @@ export class SbomFlowMatrix {
         return 6;
       })
       .attr("fill", (d: any) => {
-        if (d.id === "PCFS") return "#03330f";
-        if (d.id === "V1.9") return "#ab2051";
+        if (d.id === "PCFS") return "#00B388";
+        if (d.id === "V1.9") return "#034694";
         if (!this.hasChildren(d.id) && !this.hasSbomData(d.id))
-          return "#6b7280"; // leaf
+          return "#034694"; // leaf
         if (this.hasSbomData(d.id)) return "#22c55e"; // SBOM entry
-        return "#38bdf8";
+        return "#034694";
       });
 
     nodeGroup

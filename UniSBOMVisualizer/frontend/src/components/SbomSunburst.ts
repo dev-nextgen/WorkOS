@@ -35,7 +35,7 @@ export class SbomSunburst {
       .append("svg")
       .attr("width", "100%")
       .attr("height", "100%")
-      .style("background", "#0b0f17")
+      .style("background", "#000000")
       .append("g")
       .attr(
         "transform",
@@ -125,9 +125,9 @@ export class SbomSunburst {
 
     const color = (d: any) => {
       if (d.data.id === "PCFS") return "#00B388";
-      if (d.depth === 1) return "#6b7280";
+      if (d.depth === 1) return "#034694";
       if (d.data.isSbom) return "#22c55e";
-      if (!d.children) return "#6b7000";
+      if (!d.children) return "#22c55e";
       return "#38bdf8";
     };
 

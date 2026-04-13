@@ -35,7 +35,7 @@ export class SbomHorizontalBar {
       .append("svg")
       .attr("width", this.width)
       .attr("height", this.height)
-      .style("background", "#0b0f17");
+      .style("background", "#000000");
   }
 
   update(data: SbomData) {
@@ -94,7 +94,7 @@ export class SbomHorizontalBar {
       .attr("height", y.bandwidth())
       .attr("x", 0)
       .attr("width", 0)
-      .attr("fill", "#38bdf8")
+      .attr("fill", "#00B388")
       .transition()
       .duration(800)
       .attr("width", (d) => x(d.count));
@@ -107,23 +107,20 @@ export class SbomHorizontalBar {
       .attr("x", (d) => x(d.count) + 5)
       .attr("y", (d) => y(d.team)! + y.bandwidth() / 2)
       .attr("dy", "0.35em")
-      .attr("fill", "#ab2051")
-      .style("font-size", "12px")
+      .attr("fill", "#fff")
+      .style("font-size", "10px")
       .text((d) => d3.format(",")(d.count));
 
     //X Axis (formatted)
     g.append("g")
       .call(d3.axisTop(x).ticks(5).tickFormat(d3.format(",")))
       .selectAll("text")
-      .attr("fill", "#d5ebdc");
+      .attr("fill", "#fff");
 
     g.selectAll(".domain, .tick line").attr("stroke", "#555");
 
     //Y Axis
-    g.append("g")
-      .call(d3.axisLeft(y))
-      .selectAll("text")
-      .attr("fill", "#d5ebdc");
+    g.append("g").call(d3.axisLeft(y)).selectAll("text").attr("fill", "orange");
 
     g.selectAll(".domain, .tick line").attr("stroke", "#555");
   }
