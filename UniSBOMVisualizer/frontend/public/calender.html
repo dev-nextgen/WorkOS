@@ -885,3 +885,16 @@
     </div>
     <!-- /. box -->
 </div>
+
+<script>
+    // SPA Redirect:
+    (function () {
+        const isDirectLoad =
+            !document.referrer || !document.referrer.includes(location.origin);
+
+        if (isDirectLoad) {
+            const path = window.location.pathname;
+            window.location.replace("/index.html");
+        }
+    })();
+</script>

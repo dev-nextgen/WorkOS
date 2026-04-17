@@ -80,6 +80,42 @@ function initDataTable() {
   console.log("DataTable READY");
 }
 
+/* ========================================================= /DATATABLE INIT (SAFE)
+========================================================= */
+function initCVEDataTable() {
+  console.log("Initializing DataTable");
+
+  //@ts-ignore
+  if (!window.$ || !$.fn.DataTable) {
+    console.error("❌ DataTables not loaded");
+    return;
+  }
+
+  //@ts-ignore
+  const table = $("#ezsecopscvetbl");
+
+  if (!table.length) {
+    console.warn("Table not found");
+    return;
+  }
+
+  //@ts-ignore
+  if ($.fn.DataTable.isDataTable("#ezsecopscvetbl")) {
+    table.DataTable().clear().destroy();
+  }
+
+  table.DataTable({
+    responsive: true,
+    autoWidth: false,
+    destroy: true,
+    searching: true,
+    paging: true,
+    info: true,
+  });
+
+  console.log("DataTable READY");
+}
+
 /* =========================================================
    /CALENDAR INIT (SAFE)
 ========================================================= */
@@ -183,6 +219,7 @@ function initDashboard() {
   const flow = new SbomFlowMatrix();
   const sunburst = new SbomSunburst();
   const bar = new SbomHorizontalBar();
+  const cvebar = new SbomHorizontalBar();
 
   try {
     flow.init("#graph");
@@ -220,6 +257,9 @@ function resolveInit(view: string) {
       return initCalendar;
 
     case "./datatable.html":
+      return initDataTable;
+
+    case "./datatable-cve.html":
       return initDataTable;
 
     case "./index.html":

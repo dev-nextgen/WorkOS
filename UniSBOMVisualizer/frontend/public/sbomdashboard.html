@@ -83,7 +83,7 @@
                     <div class="container-fluid">
 
                         <div class="callout callout-danger">
-                                      <h5><i class="fas fa-computer"></i> PCFS UniSBOM Operations </h5>
+                                      <h5><i class="fas fa-computer"></i> AIE aaS UniSBOM Operations </h5>
 
                                       EzSecOps Team (ezsecops@hpe.com), enhanced w.r.t EU CRA for seamless, transparent tarball downloading, operations w.r.t PCFS: </br>
                                           1) Crystal Clear Reporting
@@ -98,7 +98,7 @@
                         <!-- SBOM Pkgs INFO BOX ROW -->
                         <div class="row">
                             <!-- BOX -->
-                            <div class="col-md-6 col-sm-6 col-12">
+                            <div class="col-md-12 col-sm-12 col-12">
                                 <div class="info-box bg-olive">
                                 <span class="info-box-icon">
                                     <i class="fas fa-shield-alt"></i>
@@ -109,36 +109,19 @@
                                     <div class="progress-bar bg-light" style="width: 100%"></div>
                                     </div>
                                     <span class="progress-description text-light">
-                                    <i class="fas fa-bug"></i>: 1,14,470
+                                    <i class="fas fa-envelope-open-text"></i>: 1,14,470
                                     </span>
                                 </div>
                                 </div>
                             </div>
                             <!-- BOX -->
-                            <div class="col-md-6 col-sm-6 col-12">
-                                <div class="info-box bg-navy">
-                                <span class="info-box-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">EzLegacy aaS</span>
-                                    <div class="progress">
-                                    <div class="progress-bar bg-light" style="width: 100%"></div>
-                                    </div>
-                                    <span class="progress-description text-light">
-                                    <i class="fas fa-bug"></i>: 13,470
-                                    </span>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
                         </div>
                         <!-- CARDs #2 SBOM Telemetry INFO BOX ROW -->
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="card card-outline card-navy">
                                 <div class="card-header">
-                                    <h3 class="card-title">CVE Network View</h3>
+                                    <h3 class="card-title">SBOM Network View</h3>
 
                                     <!-- Collapse Button -->
                                     <div class="card-tools">
@@ -149,10 +132,10 @@
                                 </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="card card-outline card-navy">
                                 <div class="card-header">
-                                    <h3 class="card-title">CVE Sunburst View</h3>
+                                    <h3 class="card-title">SBOM Sunburst View</h3>
                                     <!-- Collapse Button -->
                                     <div class="card-tools">
                                     </div>
@@ -171,7 +154,7 @@
                                     <div class="card-header">
                                     <h3 class="card-title">
                                         <i class="far fa-chart-bar"></i>
-                                        CVE Bar Chart View
+                                        SBOM Bar Chart View
                                     </h3>
 
                                     <div class="card-tools">
@@ -184,10 +167,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        </div>
-                    </section>
-
+                </section>
              </div>
              <!-- FOOTER -->
              <footer class="main-footer text-center">
@@ -195,6 +175,19 @@
                  (ezsecops@hpe.com)
              </footer>
             <script type="module" src="./main.ts"></script>
+
+            <script>
+                // SPA Redirect:
+                (function () {
+                    const isDirectLoad =
+                        !document.referrer || !document.referrer.includes(location.origin);
+
+                    if (isDirectLoad) {
+                        const path = window.location.pathname;
+                        window.location.replace("/index.html");
+                    }
+                })();
+            </script>
+
         </body>
-    </body>
 </html>

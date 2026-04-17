@@ -1,6 +1,6 @@
 <!-- SIDEBAR -->
 <!-- Brand -->
-<a href="http://localhost:8082/index.html" class="brand-link">
+<a href="./index.html" class="brand-link" data-view="./index.html">
     <span class="brand-text font-weight-light"
         >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
             class="nav-icon fas fa-file-shield"
@@ -27,7 +27,7 @@
                     <p>Telemetry</p>
                 </a>
             </li>
-
+            <!--
             <li class="nav-item">
                 <a
                     href="./scheduler.html"
@@ -38,12 +38,17 @@
                     <p>Scheduler</p>
                 </a>
             </li>
+             -->
 
             <li class="nav-item">
-                <a href="http://localhost:8082/index.html" class="nav-link">
+                <a
+                    href="./cvedashboard.html"
+                    class="nav-link"
+                    data-view="./cvedashboard.html"
+                >
                     <i class="nav-icon fas fa-tasks"></i>
                     <p>
-                        CVE Issues Reported
+                        Vulnerability Mng Sys.
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
@@ -59,22 +64,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a
-                            href="http://localhost:8082/index.html"
-                            class="nav-link"
-                        >
+                        <a href="./index.html" class="nav-link">
                             <i class="nav-icon fas fa-reorder"></i>
                             <p>
-                                AIE Coverage
+                                AIE CVE's Coverage
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a
-                                    href="./datatable.html"
+                                    href="./datatable-cve.html"
                                     class="nav-link"
-                                    data-view="./datatable.html"
+                                    data-view="./datatable-cve.html"
                                 >
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>AIE 1.10.x</p>
@@ -82,9 +84,9 @@
                             </li>
                             <li class="nav-item">
                                 <a
-                                    href="./datatable.html"
+                                    href="./datatable-cve.html"
                                     class="nav-link"
-                                    data-view="./datatable.html"
+                                    data-view="./datatable-cve.html"
                                 >
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>AIE 1.11.x</p>
@@ -92,9 +94,9 @@
                             </li>
                             <li class="nav-item">
                                 <a
-                                    href="./datatable.html"
+                                    href="./datatable-cve.html"
                                     class="nav-link"
-                                    data-view="./datatable.html"
+                                    data-view="./datatable-cve.html"
                                 >
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>AIE 1.12.x</p>
@@ -102,64 +104,17 @@
                             </li>
                         </ul>
                     </li>
-                    <!--
-                    <li class="nav-item">
-                        <a
-                            href="./index.html"
-                            class="nav-link"
-                            data-view="./index.html"
-                        >
-                            <i class="nav-icon fas fa-reorder"></i>
-                            <p>
-                                EzLegacy Coverage
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a
-                                    href="./datatable.html"
-                                    class="nav-link"
-                                    data-view="./datatable.html"
-                                >
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>EUA 1.5.3</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    href="./datatable.html"
-                                    class="nav-link"
-                                    data-view="./datatable.html"
-                                >
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>EUA 1.5.4</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    href="./datatable.html"
-                                    class="nav-link"
-                                    data-view="./datatable.html"
-                                >
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>EUA 1.5.5</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                     -->
                 </ul>
             </li>
             <li class="nav-item">
                 <a
-                    href="./index.html"
+                    href="./sbomdashboard.html"
                     class="nav-link"
-                    data-view="./index.html"
+                    data-view="./sbomdashboard.html"
                 >
                     <i class="nav-icon fas fa-tasks"></i>
                     <p>
-                        SBOM Ops
+                        SBOM Mng Sys.
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
@@ -176,13 +131,13 @@
                     </li>
                     <li class="nav-item">
                         <a
-                            href="./index.html"
+                            href="./sbomdashboard.html"
                             class="nav-link"
-                            data-view="./index.html"
+                            data-view="./sbomdashboard.html"
                         >
                             <i class="nav-icon fas fa-reorder"></i>
                             <p>
-                                Pkg Coverage
+                                Pkg's Coverage
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
