@@ -1,8 +1,47 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
+        <!-- CVE Coverage -->
         <div class="row">
-            <!-- /.container-fluid -->
+            <div class="col-md-12">
+                <div
+                    class="callout callout-info shadow-sm p-3"
+                    style="font-size: 0.9rem"
+                >
+                    <h6 class="mb-2">
+                        <i class="fas fa-chart-line mr-1"></i>
+                        <strong>CVE Coverage Overview</strong>
+                    </h6>
+
+                    <p class="mb-2">
+                        Comprehensive view of vulnerability data across products
+                        and components.
+                    </p>
+
+                    <ul class="pl-3 mb-2" style="line-height: 1.4">
+                        <li>Go to <strong>AIE CVE Coverage Table</strong></li>
+                        <li><u>Select release version</u> to filter</li>
+                        <li>
+                            View <strong>CVE details</strong> (severity, impact,
+                            components)
+                        </li>
+                        <li>
+                            Analyze
+                            <strong>release-level security posture</strong>
+                        </li>
+                    </ul>
+
+                    <small>
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Drill down into releases for CVE insights. Issues?
+                        Contact <strong><code>ezSecOps</code></strong
+                        >.
+                    </small>
+                </div>
+            </div>
+        </div>
+        <!-- CVE Coverage -->
+        <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
@@ -15,28 +54,25 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="ezsecopstbl" class="table table-bordered">
+                        <table id="ezsecopscvetbl" class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Pkg</th>
+                                    <th>ID</th>
                                     <th>Component</th>
                                     <th>Repo/Image</th>
                                     <th>AIE Group</th>
-                                    <th>Identified Version</th>
-                                    <th>Latest Market Version</th>
                                     <th>Remediation Priority</th>
                                     <th>Upgrade Status</th>
-                                    <th>End of Support (EOS)</th>
+                                    <th>Report Date</th>
+                                    <th>Remediated Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>ezaddon-kubeflow</td>
+                                    <td>AISW-1247</td>
                                     <td>Kubeflow Addon</td>
                                     <td>github.com/ezaddon/kubeflow</td>
                                     <td>AIE Apps</td>
-                                    <td>1.8.0</td>
-                                    <td>1.9.2</td>
                                     <td>
                                         <small
                                             class="badge badge-primary text-decoration-underline"
@@ -44,15 +80,14 @@
                                         >
                                     </td>
                                     <td>Planned Q2</td>
-                                    <td>No</td>
+                                    <td>2026-03-15</td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
-                                    <td>log4j-core</td>
+                                    <td>AISW-2389</td>
                                     <td>Apache Log4j</td>
                                     <td>github.com/apache/logging-log4j2</td>
                                     <td>AIE Apps</td>
-                                    <td>2.17.1</td>
-                                    <td>2.23.1</td>
                                     <td>
                                         <small
                                             class="badge badge-warning text-decoration-underline"
@@ -60,33 +95,31 @@
                                         >
                                     </td>
                                     <td>Pending</td>
-                                    <td>No</td>
+                                    <td>2026-02-28</td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
-                                    <td>spring-boot-starter</td>
+                                    <td>AISW-3561</td>
                                     <td>Spring Boot</td>
                                     <td>
                                         mvn://spring.io/projects/spring-boot
                                     </td>
                                     <td>AIE Apps</td>
-                                    <td>2.7.5</td>
-                                    <td>3.2.4</td>
                                     <td>
                                         <small
                                             class="badge badge-primary text-decoration-underline"
                                             >Medium</small
                                         >
                                     </td>
-                                    <td>Planned Q2</td>
                                     <td>Yes</td>
+                                    <td>2026-04-01</td>
+                                    <td>2026-04-10</td>
                                 </tr>
                                 <tr>
-                                    <td>libssl</td>
+                                    <td>AISW-4723</td>
                                     <td>OpenSSL</td>
                                     <td>docker://nginx:1.25-alpine</td>
                                     <td>AIE Apps</td>
-                                    <td>3.0.8</td>
-                                    <td>3.3.1</td>
                                     <td>
                                         <small
                                             class="badge badge-secondary text-decoration-underline"
@@ -94,15 +127,14 @@
                                         >
                                     </td>
                                     <td>Completed</td>
-                                    <td>No</td>
+                                    <td>2026-01-20</td>
+                                    <td>2026-03-05</td>
                                 </tr>
                                 <tr>
-                                    <td>numpy</td>
+                                    <td>AISW-5890</td>
                                     <td>NumPy</td>
                                     <td>pypi://numpy</td>
                                     <td>AIE Apps</td>
-                                    <td>1.24.3</td>
-                                    <td>2.0.0</td>
                                     <td>
                                         <small
                                             class="badge badge-warning text-decoration-underline"
@@ -110,15 +142,14 @@
                                         >
                                     </td>
                                     <td>In Progress</td>
-                                    <td>Yes</td>
+                                    <td>2026-03-10</td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
-                                    <td>express</td>
+                                    <td>AISW-6012</td>
                                     <td>Node.js Express</td>
                                     <td>github.com/expressjs/express</td>
                                     <td>AIE Apps</td>
-                                    <td>4.18.2</td>
-                                    <td>4.19.2</td>
                                     <td>
                                         <small
                                             class="badge badge-secondary text-decoration-underline"
@@ -126,15 +157,14 @@
                                         >
                                     </td>
                                     <td>Completed</td>
-                                    <td>No</td>
+                                    <td>2026-02-15</td>
+                                    <td>2026-02-25</td>
                                 </tr>
                                 <tr>
-                                    <td>kernel-headers</td>
+                                    <td>AISW-7345</td>
                                     <td>Linux Kernel</td>
                                     <td>docker://ubuntu:22.04</td>
                                     <td>AIE Apps</td>
-                                    <td>5.15.0</td>
-                                    <td>6.5.0</td>
                                     <td>
                                         <small
                                             class="badge badge-danger text-decoration-underline"
@@ -142,15 +172,14 @@
                                         >
                                     </td>
                                     <td>Pending</td>
-                                    <td>Yes</td>
+                                    <td>2026-04-05</td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
-                                    <td>prometheus</td>
+                                    <td>AISW-8567</td>
                                     <td>Prometheus Monitoring</td>
                                     <td>docker://prom/prometheus:v2.45.0</td>
                                     <td>AIE Apps</td>
-                                    <td>2.42.0</td>
-                                    <td>2.52.0</td>
                                     <td>
                                         <small
                                             class="badge badge-primary text-decoration-underline"
@@ -158,15 +187,14 @@
                                         >
                                     </td>
                                     <td>Pending</td>
-                                    <td>No</td>
+                                    <td>2026-03-22</td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
-                                    <td>nginx</td>
+                                    <td>AISW-9780</td>
                                     <td>NGINX Web Server</td>
                                     <td>docker://nginx:1.25-alpine</td>
                                     <td>AIE Apps</td>
-                                    <td>1.24.0</td>
-                                    <td>1.27.1</td>
                                     <td>
                                         <small
                                             class="badge badge-secondary text-decoration-underline"
@@ -174,15 +202,14 @@
                                         >
                                     </td>
                                     <td>In Progress</td>
-                                    <td>No</td>
+                                    <td>2026-04-12</td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
-                                    <td>redis</td>
+                                    <td>AISW-1092</td>
                                     <td>Redis Cache</td>
                                     <td>docker://redis:7-alpine</td>
                                     <td>AIE Apps</td>
-                                    <td>7.0.5</td>
-                                    <td>8.0.2</td>
                                     <td>
                                         <small
                                             class="badge badge-warning text-decoration-underline"
@@ -190,15 +217,14 @@
                                         >
                                     </td>
                                     <td>Planned Q3</td>
-                                    <td>Yes</td>
+                                    <td>2026-03-18</td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
-                                    <td>elasticsearch</td>
+                                    <td>AISW-2214</td>
                                     <td>Elasticsearch Search</td>
                                     <td>docker://elasticsearch:8.10</td>
                                     <td>AIE Apps</td>
-                                    <td>8.8.0</td>
-                                    <td>8.13.0</td>
                                     <td>
                                         <small
                                             class="badge badge-danger text-decoration-underline"
@@ -206,7 +232,8 @@
                                         >
                                     </td>
                                     <td>Pending</td>
-                                    <td>No</td>
+                                    <td>2026-04-08</td>
+                                    <td>-</td>
                                 </tr>
                             </tbody>
                             <tfoot></tfoot>
@@ -219,6 +246,72 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
+
+        <!-- /.container-fluid -->
+        <!-- WorkOS Chat CVE
+        <div class="col-md-12">
+            <div
+                class="card card-navy card-outline direct-chat direct-chat-secondary"
+            >
+                <div class="card-header">
+                    <h3 class="card-title">WorkOS Chat</h3>
+                </div>
+                <div class="card-body">
+                    <div class="direct-chat-messages">
+                        <div class="direct-chat-msg right">
+                            <div class="direct-chat-infos clearfix">
+                                <span class="direct-chat-name float-right"
+                                    >User-1</span
+                                >
+                                <span class="direct-chat-timestamp float-left"
+                                    >16 Apr 08:15 am</span
+                                >
+                            </div>
+                            <div class="direct-chat-text">
+                                What is the latest redis version available ?
+                            </div>
+                        </div>
+                        <div class="direct-chat-msg">
+                            <div class="direct-chat-infos clearfix">
+                                <span class="direct-chat-name float-left"
+                                    >Agent</span
+                                >
+                                <span class="direct-chat-timestamp float-right"
+                                    >16 Apr 08:17 am</span
+                                >
+                            </div>
+                            <div class="direct-chat-text">
+                                As of April 2026, the latest major version is
+                                Redis 8.0 (released Oct 2025), with 7.4 (LTS)
+                                and 7.2 being heavily used. While older versions
+                                (6.x and below) are end-of-life (EOL), 7.2 is
+                                supported until Feb 2026, and 7.4/8.0 are
+                                actively supported.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <form action="#" method="post">
+                        <div class="input-group">
+                            <input
+                                type="text"
+                                name="message"
+                                placeholder="Type Message ..."
+                                class="form-control"
+                                value="What is the latest redis version available ?"
+                            />
+                            <span class="input-group-append">
+                                <button type="submit" class="btn btn-secondary">
+                                    Send
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        -->
     </div>
 </section>
 

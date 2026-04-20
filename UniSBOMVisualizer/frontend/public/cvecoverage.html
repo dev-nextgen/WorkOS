@@ -3,7 +3,47 @@
     <!-- HEADER -->
     <section class="content-header">
         <div class="container-fluid">
-            <div class="row" style="border: 1px solid red">
+            <div class="row">
+                <!-- CVE Coverage -->
+                <div class="col-md-12">
+                    <div
+                        class="callout callout-info shadow-sm p-3"
+                        style="font-size: 0.9rem"
+                    >
+                        <h6 class="mb-2">
+                            <i class="fas fa-chart-line mr-1"></i>
+                            <strong>CVE Coverage Overview</strong>
+                        </h6>
+
+                        <p class="mb-2">
+                            Comprehensive view of vulnerability data across
+                            products and components.
+                        </p>
+
+                        <ul class="pl-3 mb-2" style="line-height: 1.4">
+                            <li>
+                                Go to <strong>AIE CVE Coverage Table</strong>
+                            </li>
+                            <li><u>Select release version</u> to filter</li>
+                            <li>
+                                View <strong>CVE details</strong> (severity,
+                                impact, components)
+                            </li>
+                            <li>
+                                Analyze
+                                <strong>release-level security posture</strong>
+                            </li>
+                        </ul>
+
+                        <small>
+                            <i class="fas fa-info-circle mr-1"></i>
+                            Drill down into releases for CVE insights. Issues?
+                            Contact <strong><code>ezSecOps</code></strong
+                            >.
+                        </small>
+                    </div>
+                </div>
+
                 <!-- SLA -->
                 <div class="col-md-12">
                     <div
@@ -22,54 +62,51 @@
 
                         <ul class="pl-3 mb-2" style="line-height: 1.4">
                             <li>
-                                <strong>Response:</strong> Acknowledge
-                                vulnerability.
+                                <strong>Response:</strong> Acknowledge issue
                             </li>
                             <li>
-                                <strong>Fix:</strong> Remediate vulnerability.
+                                <strong>Fix:</strong> Remediate vulnerability
+                            </li>
+                            <li>
+                                <strong>Owner:</strong> AIE Engineering (LOB)
                             </li>
                             <li>
                                 <strong>Escalation:</strong> TechMngs → EM → VP
                                 → SVP
                             </li>
-                            <li>
-                                <strong>SLA timelines:</strong>
-                                <div class="row">
-                                    <div class="col-sm-1 col-md-1">
-                                        <div class="info-box-text">
-                                            CRITICAL:
-                                            <span class="badge bg-danger"
-                                                >7d</span
-                                            >
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-1 col-md-1">
-                                        <div class="info-box-text">
-                                            HIGH:
-                                            <span class="badge bg-orange"
-                                                >30d</span
-                                            >
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-1 col-md-1">
-                                        <div class="info-box-text">
-                                            MEDIUM:
-                                            <span class="badge bg-primary"
-                                                >60d</span
-                                            >
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-1 col-md-1">
-                                        <div class="info-box-text">
-                                            LOW:
-                                            <span class="badge bg-dark"
-                                                >90d</span
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
+
+                        <div class="table-responsive">
+                            <table
+                                class="table table-sm table-bordered mb-0 text-center"
+                                style="font-size: 0.85rem"
+                            >
+                                <thead class="bg-olive">
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>SLA</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-danger">
+                                        <td><strong>C</strong></td>
+                                        <td>30d</td>
+                                    </tr>
+                                    <tr class="bg-orange">
+                                        <td><strong>H</strong></td>
+                                        <td>60d</td>
+                                    </tr>
+                                    <tr class="bg-primary">
+                                        <td><strong>M</strong></td>
+                                        <td>90d</td>
+                                    </tr>
+                                    <tr class="bg-dark">
+                                        <td><strong>L</strong></td>
+                                        <td>120d</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
