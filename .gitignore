@@ -6,3 +6,4 @@ profile/
 _dump/
 node_modules/
 omega.log
+backend/
